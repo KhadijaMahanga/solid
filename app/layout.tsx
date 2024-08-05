@@ -1,4 +1,8 @@
 import type { Metadata } from 'next'
+
+
+//import stylesheet - apply to every route
+import './globals.css'
  
 
 export const metadata: Metadata = {
