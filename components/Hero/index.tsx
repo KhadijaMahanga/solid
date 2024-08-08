@@ -5,7 +5,7 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative z-10 overflow-hidden bg-white pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+        className="relative z-10 overflow-hidden bg-white pb-16 pt-[120px] dark:bg-gray-dark md:pb-[20px] md:pt-[150px] xl:pb-[60px] xl:pt-[180px] 2xl:pb-[100px] 2xl:pt-[210px]"
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
@@ -15,7 +15,7 @@ const Hero = () => {
                     Inclusive Innovation in Media and Technology Industry
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                At Kike Africa, we bridge the gap for female students transitioning to media and tech careers. Our blend of operational expertise and industry knowledge enables us to also create effective solutions in media and technology.
+                At Kike Africa, we bridge the gap for female students transitioning to media and tech careers. Our blend of operational expertise and industry knowledge enables us to also create effective solutions in media and technology spaces.
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
