@@ -32,12 +32,12 @@ const menuList: Menu[] = [
         },
       ],
     },
-    {
-      id: 2,
-      title: "About Us",
-      path: "/about",
-      newTab: false,
-    },
+    // {
+    //   id: 2,
+    //   title: "About Us",
+    //   path: "/about",
+    //   newTab: false,
+    // },
     {
       id: 3,
       title: "Contact Us",
