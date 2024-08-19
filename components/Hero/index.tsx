@@ -15,7 +15,7 @@ const Hero = () => {
                     Inclusive Innovation in Media and Technology Industry
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                At Kike Africa, we bridge the gap for female students transitioning to media and tech careers. Our blend of operational expertise and industry knowledge enables us to also create effective solutions in media and technology spaces.
+                Kike Africa is committed to supporting young women in the media and technology sectors with career coaching and capacity building. Our blend of operational expertise and industry knowledge enables us to also create effective solutions in media and technology spaces.
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
