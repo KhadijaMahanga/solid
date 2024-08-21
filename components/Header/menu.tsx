@@ -21,13 +21,13 @@ const menuList: Menu[] = [
         {
           id: 41,
           title: "Kike Media Festival",
-          path: "/media-festival",
+          path: "/initiatives/media-festival",
           newTab: false,
         },
         {
           id: 42,
           title: "Kike Tech Talks",
-          path: "/techtalks",
+          path: "/initiatives/tech-talks",
           newTab: false,
         },
       ],
