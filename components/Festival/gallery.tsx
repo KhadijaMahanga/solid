@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react";
+import React, { useState } from "react";
 export function FeaturedImageGallery() {
   const data = [
     {
@@ -36,7 +36,7 @@ export function FeaturedImageGallery() {
     },
   ];
  
-  const [active, setActive] = React.useState("/images/media-festival-2024/pic9.jpeg");
+  const [active, setActive] = useState("/images/media-festival-2024/pic9.jpeg");
  
   return (
     <div className="grid gap-4">
