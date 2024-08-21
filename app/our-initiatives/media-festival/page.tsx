@@ -16,6 +16,16 @@ const KikeMediaFestival = () => {
       <Breadcrumb
         pageName="Kike Media Festival"
         description="A yearly event that aims to connect young media journalist with pioneers in the field"
+        crumbs={[
+          { 
+              "name": "Our Initiatives",
+              "url": "/our-initiatives"
+          },
+          { 
+            "name": "Kike Media Festival",
+        },
+
+      ]}
       />
       <Festival />
     </>
