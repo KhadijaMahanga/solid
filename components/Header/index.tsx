@@ -58,14 +58,14 @@ const Header = () => {
                 <Image
                   src="/images/kike-white-logo.png"
                   alt="logo"
-                  width={100}
+                  width={80}
                   height={30}
                   className={sticky ? "" : "hidden"}
                 />
                 <Image
                   src="/images/kike-main-logo.png"
                   alt="logo"
-                  width={100}
+                  width={80}
                   height={30}
                   className={sticky ? "hidden" : ""}
                 />
