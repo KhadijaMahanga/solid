@@ -1,8 +1,29 @@
 "use client";
+import React, { useState, ChangeEvent } from "react";
 
 import SectionTitle from "@/components/SectionTitle";
 
+// const isEmail = (email) =>
+//   /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+
 const Newsletter = () => {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+
+  }
+
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  }
+
+  const handleSubscribe = () => {
+    //check email validity
+    //Save details to subscribers list
+  }
 
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
@@ -16,18 +37,23 @@ const Newsletter = () => {
           <input
             type="text"
             name="name"
+            value={name}
+            onChange={handleNameChange}
             placeholder="Enter your name"
             className="border-stroke mb-4 w-full md:w-3/12 rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
           />
           <input
             type="email"
             name="email"
+            value={email}
+            onChange={handleEmailChange}
             placeholder="Enter your email"
             className="border-stroke mb-4 w-full md:w-7/12 rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
           />
           <input
             type="submit"
             value="Subscribe"
+            onClick={handleSubscribe}
             className="mb-5 w-full md:w-2/12 cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
           />
         </div>

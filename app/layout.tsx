@@ -19,13 +19,14 @@ export const metadata: Metadata = {
     siteName: "Kike Africa",
     images: [
       {
-        url: "https://kikeafrica.co.tz/images/image.jpg",
-        type: "image/jpeg"
+        url: "/opengraph-image.png",
+        type: "image/png"
       }
     ],
     locale: "en_US",
     type: "website" 
-  }
+  },
+  keywords: ["media", "technology", "women", "tanzania", "technology consulting", "media consulting", "habari", "wanawake", "kiketech talks", "tech talks", "kike media festival", "girl tech"],
 }
 
 

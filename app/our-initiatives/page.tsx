@@ -1,6 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import Header from "@/components/Header";
-import Festival from "@/components/Festival";
 
 import { Metadata } from "next";
 

@@ -7,7 +7,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "KikeTech Talks | Our Initatives | Kike Africa",
-  description: "This is About Page for Startup Nextjs Template",
+  description: "Online Tech Talks with young technology and pioneers",
 };
 
 const KikeMediaFestival = () => {
