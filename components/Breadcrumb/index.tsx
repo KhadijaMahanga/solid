@@ -41,9 +41,8 @@ const Breadcrumb = ({
                     </li>
 
                   ): (
-                    <li className="flex items-center">
+                    <li key={index} className="flex items-center">
                       <Link
-                        key={index}
                         href={url}
                         className="pr-1 text-base font-medium text-body-color hover:text-primary"
                       >

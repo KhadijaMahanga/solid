@@ -1,6 +1,9 @@
 "use client"
 
 import React, { useState } from "react";
+import Image from "next/image";
+
+
 export function FeaturedImageGallery() {
   const data = [
     {
@@ -41,18 +44,22 @@ export function FeaturedImageGallery() {
   return (
     <div className="grid gap-4">
       <div>
-        <img
+        <Image
           className="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
           src={active}
+          width={560}
+          height={450}
           alt=""
         />
       </div>
       <div className="grid grid-cols-5 gap-4">
         {data.map(({ imgelink }, index) => (
           <div key={index}>
-            <img
+            <Image
               onClick={() => setActive(imgelink)}
               src={imgelink}
+              width={100}
+              height={20}
               className="h-20 max-w-full cursor-pointer rounded-lg object-cover object-center"
               alt="gallery-image"
             />
