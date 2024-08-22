@@ -113,7 +113,7 @@ const Header = () => {
                               usePathName === item.path 
                                 ? "text-primary"
                                 : "text-dark hover:text-primary"
-                            } ${sticky? "text-white/70 hover:text-white": ""}`}
+                            } ${sticky? "text-white hover:text-white/70": ""}`}
                           >
                             {item.title}
                           </Link>
@@ -121,7 +121,7 @@ const Header = () => {
                           <>
                             <p
                               onClick={() => handleSubmenu(index)}
-                              className={`flex cursor-pointer items-center justify-between py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${sticky? "text-white/70 hover:text-white group-hover:text-white": ""}`}
+                              className={`flex cursor-pointer items-center justify-between py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${sticky? "text-white hover:text-white/70 group-hover:text-white": ""}`}
                             >
                               {item.title}
                               <span className="pl-3">
@@ -160,6 +160,7 @@ const Header = () => {
               <div className="flex items-center justify-end pr-16 lg:pr-0">
                 <Link
                   href="https://forms.gle/H7YVwjFLu5KWWHYA8"
+                  target="_blank"
                   className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
                 >
                   Register to KikeTech Talks
