@@ -1,28 +1,51 @@
 "use client";
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 
 import SectionTitle from "@/components/SectionTitle";
 
-// const isEmail = (email) =>
-//   /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+
+const isEmail = (email: string) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+
+interface NewsletterFormState {
+  name: string;
+  email: string;
+  message: string;
+}
 
 const Newsletter = () => {
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [formData, setFormData] = useState<NewsletterFormState>({ name: "", email: "", message: ""});
 
-  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData( previousData => ({ ...previousData, [name]: value }))
   }
 
-  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  }
-
-  const handleSubscribe = () => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     //check email validity
-    //Save details to subscribers list
+    try {
+      if(!isEmail(formData.email)) {
+        setFormData( previousData => ({ ...previousData, "message": "You have entered an invalid email address" }))
+      } else {
+        //Save details to subscribers list
+        const rawResponse = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        await rawResponse.json();
+
+        setFormData({ name: "", email: "", message: "You have subscribed successful"})
+      }
+    } catch (e: any) {
+        console.log(e.message);
+    }
+    
   }
 
   return (
@@ -33,30 +56,34 @@ const Newsletter = () => {
             title="Subscribe to our Newsletter" 
             center 
             />
-        <div className="flex flex-col md:flex-row md:space-x-4">
+            { formData.message?.length > 0 && <p className="text-start text-base leading-relaxed text-lime-600">
+          {formData.message}
+        </p>}
+        <form className="flex flex-col md:flex-row md:space-x-4" onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
-            value={name}
-            onChange={handleNameChange}
+            value={formData.name}
+            onChange={handleChange}
             placeholder="Enter your name"
             className="border-stroke mb-4 w-full md:w-3/12 rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
           />
           <input
             type="email"
             name="email"
-            value={email}
-            onChange={handleEmailChange}
+            value={formData.email}
+            onChange={handleChange}
             placeholder="Enter your email"
             className="border-stroke mb-4 w-full md:w-7/12 rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
           />
-          <input
+          <button
             type="submit"
-            value="Subscribe"
-            onClick={handleSubscribe}
-            className="mb-5 w-full md:w-2/12 cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
-          />
-        </div>
+            className="mb-5 w-full md:w-2/12 cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/70"
+          >Subscribe</button>
+        </form>
+        <p className="text-start text-base leading-relaxed text-body-color">
+          No spam guaranteed, Unsubscribe anytime.
+        </p>
 
       <div>
         <span className="absolute left-2 top-7">
