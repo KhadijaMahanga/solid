@@ -2,21 +2,6 @@ import { Service } from "@/types/service";
 
 const servicesData: Service[] = [
   {
-    id: 1,
-    icon: (
-      <svg width="40" height="41" viewBox="0 0 40 41" className="fill-current">
-        <path
-          opacity="0.5"
-          d="M37.7778 40.2223H24C22.8954 40.2223 22 39.3268 22 38.2223V20.0001C22 18.8955 22.8954 18.0001 24 18.0001H37.7778C38.8823 18.0001 39.7778 18.8955 39.7778 20.0001V38.2223C39.7778 39.3268 38.8823 40.2223 37.7778 40.2223Z"
-        />
-        <path d="M23.2222 0C22.6699 0 22.2222 0.447715 22.2222 1V12.3333C22.2222 12.8856 22.6699 13.3333 23.2222 13.3333H39C39.5523 13.3333 40 12.8856 40 12.3333V0.999999C40 0.447714 39.5523 0 39 0H23.2222ZM0 39C0 39.5523 0.447715 40 1 40H16.7778C17.3301 40 17.7778 39.5523 17.7778 39V27.6667C17.7778 27.1144 17.3301 26.6667 16.7778 26.6667H1C0.447716 26.6667 0 27.1144 0 27.6667V39ZM0 21.2222C0 21.7745 0.447715 22.2222 1 22.2222H16.7778C17.3301 22.2222 17.7778 21.7745 17.7778 21.2222V0.999999C17.7778 0.447714 17.3301 0 16.7778 0H1C0.447716 0 0 0.447715 0 1V21.2222Z" />
-      </svg>
-    ),
-    title: "Technology Solution",
-    paragraph:
-      "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
-  },
-  {
     id: 2,
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" className="fill-current">
@@ -28,9 +13,21 @@ const servicesData: Service[] = [
       </svg>
     ),
     title: "Kike Habari",
-    paragraph:
-      "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+    paragraph: "Kike Habari is a tool dedicated to showcasing news and stories about women across various sectors in Tanzania. Kike Africa offer a space for young journalists and content creators to share their voices and publish stories about themselves or their communities via Kike Habari. Whether you're looking to highlight important issues, share personal experiences, or explore the diverse narratives of women, Kike Habari is a tool to amplify your voice and connect with a wider audience"
   },
+  {
+    id: 1,
+    icon: (
+      <svg width="40" height="41" viewBox="0 0 40 41" className="fill-current">
+        <path
+          opacity="0.5"
+          d="M37.7778 40.2223H24C22.8954 40.2223 22 39.3268 22 38.2223V20.0001C22 18.8955 22.8954 18.0001 24 18.0001H37.7778C38.8823 18.0001 39.7778 18.8955 39.7778 20.0001V38.2223C39.7778 39.3268 38.8823 40.2223 37.7778 40.2223Z"
+        />
+        <path d="M23.2222 0C22.6699 0 22.2222 0.447715 22.2222 1V12.3333C22.2222 12.8856 22.6699 13.3333 23.2222 13.3333H39C39.5523 13.3333 40 12.8856 40 12.3333V0.999999C40 0.447714 39.5523 0 39 0H23.2222ZM0 39C0 39.5523 0.447715 40 1 40H16.7778C17.3301 40 17.7778 39.5523 17.7778 39V27.6667C17.7778 27.1144 17.3301 26.6667 16.7778 26.6667H1C0.447716 26.6667 0 27.1144 0 27.6667V39ZM0 21.2222C0 21.7745 0.447715 22.2222 1 22.2222H16.7778C17.3301 22.2222 17.7778 21.7745 17.7778 21.2222V0.999999C17.7778 0.447714 17.3301 0 16.7778 0H1C0.447716 0 0 0.447715 0 1V21.2222Z" />
+      </svg>
+    ),
+    title: "Technology Solution",
+    paragraph: "At Kike Africa, we provide all-round technology solutions tailored to meet our clients' needs from building custom web applications for personal or business use, to developing innovative mobile applications. Our expertise extends to civic technology and data solutions. Whether you’re looking to enhance your digital presence, streamline operations, or leverage data for actionable insights, we provide innovatives that will match your specific needs and help you succeed."  },
   {
     id: 3,
     icon: (
@@ -43,8 +40,7 @@ const servicesData: Service[] = [
       </svg>
     ),
     title: "Kike Coding and Data Hub",
-    paragraph:
-      "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
-  }
+    paragraph: "Our Coding and Data Hub is designed to foster skills development among media and tech enthusiasts. We offer tailored training programs and resources to help aspirants build expertise in coding, data analysis, and related fields. Whether you're looking to enhance your technical skills, dive into programming, or master data-driven insights, our hub provides the tools and guidance you need to advance your career and achieve your goals."
+    }
 ];
 export default servicesData;
