@@ -9,7 +9,7 @@ const menuList: Menu[] = [
     },
     {
       id: 33,
-      title: "In the Media",
+      title: "Kike Habari",
       path: "/news",
       newTab: true,
     },

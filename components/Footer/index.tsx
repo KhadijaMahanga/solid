@@ -105,7 +105,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/"
+                      href="/news"
                       className="mb-4 inline-block text-base duration-300 text-body-color-dark hover:text-primary"
                     >
                       Stories
