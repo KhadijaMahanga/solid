@@ -3,7 +3,7 @@ import { Episode } from "@/types/episode";
 const EpisodeItem = (data: Episode) => {
     return (
               <div>
-                <h2 className="mb-8 text-3xl font-bold leading-tight text-black  sm:text-xl sm:leading-tight">
+                <h2 className="mb-8 md:text-2xl font-bold leading-tight text-black text-l sm:leading-tight">
                   {data.title}
                 </h2>
                 <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">

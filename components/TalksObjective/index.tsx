@@ -27,7 +27,7 @@ const TalksObjective = () => {
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-start">
           <div className="w-full px-4 lg:w-1/2">
-          <h4 className="mb-9 font-bold !leading-tight text-black sm:text-2xl md:text-[34px]">
+          <h4 className="mb-9 font-bold !leading-tight text-black text-2xl">
             Why Join KikeTech Talks?
           </h4>
             <div
