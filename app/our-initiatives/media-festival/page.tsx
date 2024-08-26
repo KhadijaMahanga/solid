@@ -1,6 +1,7 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import Header from "@/components/Header";
 import Festival from "@/components/Festival";
+import Footer from "@/components/Footer";
 
 import { Metadata } from "next";
 
@@ -28,6 +29,7 @@ const KikeMediaFestival = () => {
       ]}
       />
       <Festival />
+      <Footer />
     </>
   );
 };
