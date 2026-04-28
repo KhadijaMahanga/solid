@@ -21,7 +21,8 @@
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"],
       "@/types/*": ["types/*"],
-      "@/services/*": ["services/*"]
+      "@/services/*": ["services/*"],
+      "@/sanity/*": ["sanity/*"],
     },
     "plugins": [
       {
