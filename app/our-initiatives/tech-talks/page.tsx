@@ -2,6 +2,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Header from "@/components/Header";
 import TalksObjective from "@/components/TalksObjective";
 import TalksEpisodes from "@/components/TalksEpisodes";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
 
@@ -33,6 +34,8 @@ const KikeMediaFestival = () => {
       />
       <TalksObjective />
       <TalksEpisodes />
+      <Newsletter />
+
       <Footer />
     </>
   );

@@ -20,7 +20,6 @@ export default function Page() {
       <Service />
       <Mentorship />
       <Contact />
-      <Services />
       <Newsletter />
       <Footer />
     </>
