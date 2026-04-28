@@ -63,7 +63,7 @@ const Newsletter = () => {
 
       setStatus({
         type: "success",
-        message: "🎉 You're registered! Check your email for event details and calendar invite."
+        message: "🎉 You are registered! Check your email for event details and calendar invite."
       });
       setFormData({ name: "", email: ""});
     } catch (error) {

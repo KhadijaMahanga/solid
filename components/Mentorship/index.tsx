@@ -63,7 +63,7 @@ const Mentorship: React.FC = () => {
 
       setStatus({
         type: "success",
-        message: "Thank you! We've received your details and will be in touch within 3-5 business days."
+        message: "Thank you! We have received your details and will be in touch within 3-5 business days."
       });
       
       // Reset form
@@ -75,7 +75,7 @@ const Mentorship: React.FC = () => {
       console.error("Form submission failed:", error);
       setStatus({
         type: "error",
-        message: "Oops! Something went wrong. Please try again or email us directly at hello@kikeafrica.org"
+        message: "Oops! Something went wrong. Please try again or email us directly at info@kikeafrica.org"
       });
     } finally {
       setLoading(false);
