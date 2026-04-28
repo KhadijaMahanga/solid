@@ -1,64 +1,100 @@
 "use client";
-import React, { useState, ChangeEvent, FormEvent } from "react";
-
+import { useState, ChangeEvent, FormEvent } from "react";
 import SectionTitle from "@/components/SectionTitle";
 
+// ✅ Reuse same Google Apps Script webhook
+const GOOGLE_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || "";
 
-const isEmail = (email: string) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
-
-interface NewsletterFormState {
+interface TalkRegistrationForm {
   name: string;
   email: string;
-  message: string;
 }
 
 const Newsletter = () => {
+  const [formData, setFormData] = useState<TalkRegistrationForm>({
+    name: "",
+    email: "",
+  });
+  const [status, setStatus] = useState<{ type: "success" | "error" | ""; message: string }>({
+    type: "",
+    message: ""
+  });
+  const [loading, setLoading] = useState(false);
 
-  const [formData, setFormData] = useState<NewsletterFormState>({ name: "", email: "", message: ""});
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData( previousData => ({ ...previousData, [name]: value }))
-  }
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const validateEmail = (email: string) => 
+    /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    //check email validity
-    try {
-      if(!isEmail(formData.email)) {
-        setFormData( previousData => ({ ...previousData, "message": "You have entered an invalid email address" }))
-      } else {
-        //Save details to subscribers list
-        const rawResponse = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
-
-        await rawResponse.json();
-
-        setFormData({ name: "", email: "", message: "You have subscribed successful"})
-      }
-    } catch (e: any) {
-        console.log(e.message);
-    }
     
-  }
+    if (!GOOGLE_SCRIPT_URL) {
+      setStatus({ type: "error", message: "Configuration error. Please contact support." });
+      return;
+    }
+
+    // Basic validation
+    if (!formData.name.trim() || !formData.email.trim()) {
+      setStatus({ type: "error", message: "Please fill in your name and email." });
+      return;
+    }
+    if (!validateEmail(formData.email)) {
+      setStatus({ type: "error", message: "Please enter a valid email address." });
+      return;
+    }
+
+    setLoading(true);
+    setStatus({ type: "", message: "" });
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // Required for Google Apps Script
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          form_type: "techtalks" // 🔑 Routes to correct sheet tab
+        })
+      });
+
+      setStatus({
+        type: "success",
+        message: "🎉 You are registered! Check your email for event details and calendar invite."
+      });
+      setFormData({ name: "", email: ""});
+    } catch (error) {
+      console.error("Talk registration failed:", error);
+      setStatus({
+        type: "error",
+        message: "Oops! Registration failed. Please email us at hello@kikeafrica.org"
+      });
+    } finally {
+      setLoading(false);
+      setTimeout(() => setStatus({ type: "", message: "" }), 7000);
+    }
+  };
 
   return (
-    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
+    <section id="kiketech-talks" className="overflow-hidden py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-            paragraph="Join our community and get interesting news from us!"
-            title="Subscribe to our Newsletter" 
+            paragraph="Join our monthly series featuring innovators in media and technology. Get insights, network with peers, and shape the future of inclusive tech in Africa."
+            title="Register for KikeTech Talks"
             center 
             />
-            { formData.message?.length > 0 && <p className="text-start text-base leading-relaxed text-lime-600">
-          {formData.message}
-        </p>}
+            {status.message && (
+            <div className={`mb-6 p-4 rounded-lg text-center max-w-2xl mx-auto transition-opacity ${
+              status.type === "success" 
+                ? "bg-green-50 text-green-800 dark:bg-green-900/30 dark:text-green-200" 
+                : "bg-red-50 text-red-800 dark:bg-red-900/30 dark:text-red-200"
+            }`}>
+              {status.message}
+            </div>
+          )}
         <form className="flex flex-col md:flex-row md:space-x-4" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -79,10 +115,10 @@ const Newsletter = () => {
           <button
             type="submit"
             className="mb-5 w-full md:w-2/12 cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/70"
-          >Subscribe</button>
+          >Register</button>
         </form>
         <p className="text-start text-base leading-relaxed text-body-color">
-          No spam guaranteed, Unsubscribe anytime.
+          No spam guaranteed. We will only email you about KikeTech Talks events. Unsubscribe anytime.
         </p>
 
       <div>

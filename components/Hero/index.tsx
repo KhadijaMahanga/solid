@@ -1,3 +1,4 @@
+// components/Hero.jsx
 import Link from "next/link";
 
 const Hero = () => {
@@ -12,30 +13,30 @@ const Hero = () => {
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                    Inclusive Innovation in Media and Technology Industry
+                  Inclusive Innovation in Media & Technology
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                Kike Africa is committed to supporting young women in the media and technology sectors with career coaching and capacity building. Our blend of operational expertise and industry knowledge enables us to also create effective solutions in media and technology spaces.
+                  Kike Africa equips young women and aspiring professionals with hands-on training, mentorship, and smart tech solutions. From data-driven storytelling to AI automation, we bridge the gap between talent and real-world opportunity.
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
-                    href="/news"
+                    href="#mentorship"
                     className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                   >
-                    Kike Habari
+                    Join Mentorship Program
                   </Link>
                   <Link
                     href="/contact"
                     className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
-                    Contact Us
+                    Work With Us
                   </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
+                <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
             width="450"
             height="556"

@@ -4,6 +4,8 @@ import Contact from "@/components/Contact";
 import Services from "@/components/Services";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+import Service from "@/components/Service";
+import Mentorship from "@/components/Mentorship"
 
 export const metadata = {
   title: "Home | Kike Africa",
@@ -15,8 +17,9 @@ export default function Page() {
     <>
       <Hero />
       <Header />
+      <Service />
+      <Mentorship />
       <Contact />
-      <Services />
       <Newsletter />
       <Footer />
     </>
