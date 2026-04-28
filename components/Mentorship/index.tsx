@@ -92,7 +92,7 @@ const Mentorship: React.FC = () => {
               Join Our Mentorship Network
             </h2>
             <p className="mt-4 text-body-color dark:text-body-color-dark">
-              Whether you're starting your career or ready to give back, connect with our community.
+              Whether you are starting your career or ready to give back, connect with our community.
             </p>
           </div>
 
@@ -182,7 +182,7 @@ const Mentorship: React.FC = () => {
                   required
                   rows={3}
                   className="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
-                  placeholder="e.g., 'We're a community radio station looking to automate show scheduling...'"
+                  placeholder="e.g., 'We are a community radio station looking to automate show scheduling...'"
                 />
               </div>
             )}
@@ -201,7 +201,7 @@ const Mentorship: React.FC = () => {
                 className="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
                 placeholder={formData.role === "mentor" 
                   ? "Tell us about your expertise, industry, and what you can offer..." 
-                  : "What are you hoping to learn? What's your current skill level?..."
+                  : "What are you hoping to learn? What is your current skill level?..."
                 }
               />
             </div>
@@ -216,7 +216,7 @@ const Mentorship: React.FC = () => {
                 onChange={handleChange}
                 rows={3}
                 className="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
-                placeholder="Anything else you'd like us to know?"
+                placeholder="Anything else you would like us to know?"
               />
             </div>
 

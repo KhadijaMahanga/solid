@@ -118,7 +118,7 @@ const Newsletter = () => {
           >Register</button>
         </form>
         <p className="text-start text-base leading-relaxed text-body-color">
-          No spam guaranteed. We'll only email you about KikeTech Talks events. Unsubscribe anytime.
+          No spam guaranteed. We will only email you about KikeTech Talks events. Unsubscribe anytime.
         </p>
 
       <div>
