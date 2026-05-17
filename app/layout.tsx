@@ -1,7 +1,9 @@
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Newsletter from '@/components/Newsletter';
 
 
-//import stylesheet - apply to every route
 import '../styles/global.css'
  
 
@@ -37,7 +39,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Newsletter />
+        <Footer />
+      </body>
     </html>
   );
 }
