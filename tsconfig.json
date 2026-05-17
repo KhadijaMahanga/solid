@@ -22,7 +22,7 @@
       "@/styles/*": ["styles/*"],
       "@/types/*": ["types/*"],
       "@/services/*": ["services/*"],
-      "@/sanity/*": ["sanity/*"],
+      "@/lib/*": ["lib/*"],
     },
     "plugins": [
       {

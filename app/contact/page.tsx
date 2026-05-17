@@ -1,9 +1,5 @@
-import Hero from "@/components/Hero";
-import Header from "@/components/Header";
 import Contact from "@/components/Contact";
 import Breadcrumb from "@/components/Breadcrumb";
-import Newsletter from "@/components/Newsletter";
-import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Contact Us | Kike Africa",
@@ -12,10 +8,9 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <Header />
       <Breadcrumb
-        pageName=""
-        description=""
+        pageName="Contact Us"
+        description="Get in touch with us"
         crumbs={[
           { 
             "name": "Contact Us",
@@ -23,8 +18,6 @@ export default function Page() {
 
       ]} />
       <Contact />
-      <Newsletter />
-      <Footer />
     </>
   )
 }
