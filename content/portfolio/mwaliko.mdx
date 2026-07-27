@@ -1,27 +1,33 @@
 ---
-title: "Mwaliko: Event Invitation Manager"
+title: "Mwaliko - Digital Invitations & Event Registration"
 date: "2026-07-27"
-summary: "A mobile app for Tanzania that automates event invitations. Used for any events from wedding, birthday parties, conferences, and more."
+summary: "A mobile app for Tanzania that runs the whole guest lifecycle for weddings, conferences, parties, and ceremonies - self-registration, mobile money payments, and automatic WhatsApp/SMS invitations, matched to how each event actually collects guests."
 tags: ["Automation", "Mobile App", "Fintech"]
 status: "coming-soon"
 results:
-  - "Automatically issues single or double invitation cards based on contribution amount — no manual tracking of who gave what"
-  - "Sends invitation cards and reminders directly by WhatsApp/SMS"
-  - "Guest and payment status update in real time via an automatic database trigger, no manual bookkeeping"
+  - "Guests can self-register through a shareable link - no organizer has to enter them by hand"
+  - "Mobile money payments are matched to guests automatically via a webhook, so a card or ticket can be issued the moment payment lands"
+  - "Invitations and reminders are sent automatically by WhatsApp/SMS the moment a guest qualifies"
+  - "One system adapts to how the event actually works - contribution tiers, free RSVP, paid tickets, or invite-only - instead of forcing every event into the same model"
 ---
 
 ## The problem
 
-Organizing an event in Tanzania often works through group contributions: guests contribute money toward the event, and the amount they give determines what kind of invitation they receive — a single card, a double card, or none yet. Tracking this by hand across dozens or hundreds of guests — who has paid, how much, what card they're owed, and whether they've been sent it — is tedious and easy to get wrong.
+Organizing an event in Tanzania; a wedding, a conference, a graduation  usually means running guest lists and payments by hand: tracking who's confirmed, who's paid, what they're owed, and manually sending invitations one by one. Different events also work differently. A wedding might collect contributions toward the celebration; a conference sells tickets; a party is just a free RSVP. Forcing all of these through one rigid process is what makes it tedious, and doing it manually is what makes it error-prone.
 
 ## What we're building
 
-Mwaliko is a mobile app (iOS, Android, and web, built with Expo/React Native) that manages this end-to-end:
+Mwaliko is a mobile app (iOS, Android, and web, built with Expo/React Native and Supabase) that runs the guest lifecycle end-to-end, adapting to the kind of event it is:
 
-- **Event & guest management** — organizers create an event and add guests, including importing directly from phone contacts.
-- **Contribution tracking** — payments are recorded against each guest, with configurable thresholds (e.g. TZS 50,000 for a single card, TZS 100,000 for a double card).
-- **Automatic card assignment** — a database trigger updates each guest's card type and status the moment a payment is recorded, so there's no manual step to remember.
-- **WhatsApp/SMS delivery** — invitation cards and reminders are sent straight to guests through Africa's Talking messaging API.
+- **Event types with sensible defaults** - organizers pick from wedding, conference, party, graduation, ceremony, or other, and the event's invitation model, guest terminology ("Guests" vs. "Attendees"), and invitation template default sensibly for that type.
+- **Four invitation models, one system**:
+  - *Contribution tiers* - guests give toward the event and automatically earn a single or double invitation card once they cross a threshold.
+  - *Free self-registration* - guests register themselves through a public link and get their invitation immediately.
+  - *Paid tickets* - self-registration collects the guest's details and returns payment instructions; the ticket is released once payment is confirmed.
+  - *Invite-only* - the organizer stays in control of who's added.
+- **Public self-registration** - each event can get a shareable public link where guests register themselves, without needing organizer login or manual entry.
+- **Automatic mobile money matching** - a webhook receives mobile money payment callbacks, matches the paying phone number to a guest (and, when set, to the event's own collection number to avoid cross-event mix-ups), and records the payment automatically - duplicate callbacks are safely ignored.
+- **Automatic invitation delivery** - the moment a guest qualifies (crosses a contribution threshold, completes free registration, or pays for a ticket), their invitation card or reminder goes out over WhatsApp/SMS via Africa's Talking, with no manual step in between.
 
 ## Status
 

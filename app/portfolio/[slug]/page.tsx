@@ -40,6 +40,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             Coming Soon
           </span>
         )}
+        {project.featured && (
+          <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium">
+            Featured
+          </span>
+        )}
       </div>
       <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-4">{project.title}</h1>
 

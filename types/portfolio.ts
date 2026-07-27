@@ -9,5 +9,6 @@ export type PortfolioProject = {
   results?: string[];
   link?: string;
   status?: 'coming-soon';
+  featured?: boolean;
   content: string;
 };

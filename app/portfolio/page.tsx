@@ -39,11 +39,16 @@ export default function PortfolioPage() {
               <div className="p-6">
                 <div className="flex items-center justify-between gap-2">
                   {project.client && (
-                    <span className="text-sm text-primary font-medium">{project.client}</span>
+                    <span className="text-sm text-black font-medium">{project.client}</span>
                   )}
                   {project.status === 'coming-soon' && (
                     <span className="text-xs px-2 py-1 rounded-full bg-yellow-100 text-yellow-800 font-medium">
                       Coming Soon
+                    </span>
+                  )}
+                  {project.featured && (
+                    <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium">
+                      Featured
                     </span>
                   )}
                 </div>

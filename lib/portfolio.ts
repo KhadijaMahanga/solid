@@ -5,6 +5,12 @@ import type { PortfolioProject } from '@/types/portfolio';
 
 const portfolioDir = path.join(process.cwd(), 'content/portfolio');
 
+function sortTier(project: Omit<PortfolioProject, 'content'>): number {
+  if (project.featured) return 0;
+  if (project.status === 'coming-soon') return 2;
+  return 1;
+}
+
 export function getAllProjects(): Omit<PortfolioProject, 'content'>[] {
   const files = fs.readdirSync(portfolioDir);
   return files
@@ -15,7 +21,11 @@ export function getAllProjects(): Omit<PortfolioProject, 'content'>[] {
       const { data } = matter(fs.readFileSync(fullPath, 'utf8'));
       return { slug, ...data } as Omit<PortfolioProject, 'content'>;
     })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort((a, b) => {
+      const tierDiff = sortTier(a) - sortTier(b);
+      if (tierDiff !== 0) return tierDiff;
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
 }
 
 export function getProjectBySlug(slug: string): PortfolioProject {
