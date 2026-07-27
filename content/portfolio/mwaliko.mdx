@@ -1,0 +1,28 @@
+---
+title: "Mwaliko = Event Invitation & Contribution Manager"
+date: "2026-07-27"
+summary: "A mobile app for Tanzania that automates event invitations. Used for any events from wedding, birthday parties, conferences, and more."
+tags: ["Automation", "Mobile App", "Fintech"]
+status: "coming-soon"
+results:
+  - "Automatically issues single or double invitation cards based on contribution amount — no manual tracking of who gave what"
+  - "Sends invitation cards and reminders directly by WhatsApp/SMS"
+  - "Guest and payment status update in real time via an automatic database trigger, no manual bookkeeping"
+---
+
+## The problem
+
+Organizing an event in Tanzania often works through group contributions: guests contribute money toward the event, and the amount they give determines what kind of invitation they receive — a single card, a double card, or none yet. Tracking this by hand across dozens or hundreds of guests — who has paid, how much, what card they're owed, and whether they've been sent it — is tedious and easy to get wrong.
+
+## What we're building
+
+Mwaliko is a mobile app (iOS, Android, and web, built with Expo/React Native) that manages this end-to-end:
+
+- **Event & guest management** — organizers create an event and add guests, including importing directly from phone contacts.
+- **Contribution tracking** — payments are recorded against each guest, with configurable thresholds (e.g. TZS 50,000 for a single card, TZS 100,000 for a double card).
+- **Automatic card assignment** — a database trigger updates each guest's card type and status the moment a payment is recorded, so there's no manual step to remember.
+- **WhatsApp/SMS delivery** — invitation cards and reminders are sent straight to guests through Africa's Talking messaging API.
+
+## Status
+
+Mwaliko is in active development and not yet publicly released. It will be launched here once available.

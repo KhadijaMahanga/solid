@@ -14,6 +14,12 @@ const menuList: Menu[] = [
       newTab: true,
     },
     {
+      id: 34,
+      title: "Portfolio",
+      path: "/portfolio",
+      newTab: false,
+    },
+    {
       id: 4,
       title: "Our Initiatives",
       newTab: false,
