@@ -8,6 +8,12 @@ const menuList: Menu[] = [
       newTab: false,
     },
     {
+      id: 5,
+      title: "Services",
+      path: "/services",
+      newTab: false,
+    },
+    {
       id: 33,
       title: "Kike Habari",
       path: "/news",
