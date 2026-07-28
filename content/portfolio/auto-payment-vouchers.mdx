@@ -1,0 +1,31 @@
+---
+title: "Automated Invoice-to-Payment-Voucher System"
+date: "2026-07-25"
+client: "Finance & Accounting Client"
+summary: "An AI-assisted system that reads uploaded invoices, applies Tanzania's VAT and withholding tax rules automatically, and produces ready-to-approve payment vouchers: replacing a manual, spreadsheet-driven process."
+tags: ["Automation", "AI", "Fintech"]
+results:
+  - "Removes manual re-keying of invoice data into payment vouchers"
+  - "Applies Tanzania VAT and withholding tax (WHT) rules automatically and consistently, including resident vs. foreign supplier rates"
+  - "Adds an approval workflow with an audit trail: once a voucher is approved, it's locked from further edits"
+  - "Supports bulk invoice uploads processed automatically in the background, with retry handling for failures"
+---
+
+## The problem
+
+Finance teams processing supplier invoices were doing it the traditional way: opening each invoice, manually reading the payee details and line items, working out VAT and withholding tax by hand, and typing the results into a payment voucher template. For a country like Tanzania, where VAT and WHT rates depend on whether a supplier is VAT-registered, what kind of service was provided, and whether the supplier is local or foreign, this is easy to get wrong: and every mistake means a wrongly calculated payment or a compliance risk with the Tanzania Revenue Authority (TRA).
+
+## What we built
+
+A Django-based system where staff upload an invoice (single or in bulk), and the rest of the process runs automatically:
+
+- **AI extraction**: a vision-capable AI model reads the invoice image and pulls out the payee, line items, amounts, and supplier residency signals (address, currency, bank details).
+- **Tax engine**: applies Tanzania's tax rules based on what was extracted: 18% VAT for registered resident suppliers, and withholding tax at 2–15% depending on whether the supply is goods, general services, rent, or professional/consultancy fees; with separate rules for foreign suppliers.
+- **Voucher generation**: calculates subtotal, VAT, WHT, and net payable, writes the amount out in words, and generates a payment voucher document per client, using each client's own template and branding.
+- **Approval workflow**: vouchers start as drafts and move to approved; once approved, they're locked from edits or deletion, so there's always a clean audit trail.
+- **Background processing**: invoices are queued and processed automatically, with failure tracking and retry counts so nothing silently falls through the cracks.
+- **Multi-client access control**: each client's invoices and vouchers are only visible to the staff assigned to that client.
+
+## Results
+
+The manual, error-prone parts of the workflow i.e. reading invoices, calculating tax by hand, retyping data into a voucher, are now automatic. Staff review and approve rather than compute from scratch, and every approved voucher is protected from later edits, giving the finance team a reliable audit trail they didn't have before.
